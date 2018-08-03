@@ -42,6 +42,8 @@ bindsym $mod+Shift+q kill
 # installed.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -nf '#FFFFFF' -nb '#007CFF' -sb '#D10000' -sf '#EEEEEE' -fn 'monospace-16'"
 
+bindsym $mod+Shift+d exec dmenu_run -i -nf '#FFFFFF' -nb '#007CFF' -sb '#D10000' -sf '#EEEEEE' -fn 'monospace-16'
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -175,9 +177,6 @@ bar {
 
 # User specific
 
-# Display 
-exec_always xrandr --output LVDS-1 --mode 1360x768
-
 # Auto launch apps on workspaces
 assign [class="Firefox"] $ws2
 assign [class="discord"] $ws10
@@ -185,7 +184,7 @@ assign [class="Hexchat"] $ws10
 assign [class="Telegram"] $ws10
 
 # Lock the display
-bindsym $mod+i exec i3lock -f
+bindsym $mod+i exec i3lock -i /home/fam/locked.png -f
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -204,6 +203,18 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Start the ranger file manager
 bindsym $mod+b exec gnome-terminal -x bash -c "ranger"
+
+# Start ikhal
+bindsym $mod+Shift+b exec gnome-terminal -x bash -c "ikhal"
+
+# Fire up a dark terminal
+bindsym $mod+Shift+Return exec gnome-terminal --tab-with-profile=dark 
+
+# Start firefox
+bindsym $mod+Shift+m exec firefox
+
+# Start xreader
+bindsym $mod+Shift+n exec xreader
 
 # Colors
 # class                 border  bground text    indicator child_border
