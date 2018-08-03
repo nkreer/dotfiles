@@ -184,7 +184,7 @@ assign [class="Hexchat"] $ws10
 assign [class="Telegram"] $ws10
 
 # Lock the display
-bindsym $mod+i exec i3lock -i /home/fam/locked.png -f
+bindsym $mod+i exec i3lock -f
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
