@@ -177,14 +177,20 @@ bar {
 
 # User specific
 
+# Display 
+exec_always xrandr --output LVDS-1 --mode 1360x768
+exec_always xsetroot -solid "#007CFF"
+
 # Auto launch apps on workspaces
 assign [class="Firefox"] $ws2
+assign [class="qutebrowser"] $ws2
 assign [class="discord"] $ws10
 assign [class="Hexchat"] $ws10 
 assign [class="Telegram"] $ws10
+assign [class="Corebird"] $ws10
 
 # Lock the display
-bindsym $mod+i exec i3lock -f
+bindsym $mod+i exec i3lock -c 007CFF -f 
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -210,8 +216,8 @@ bindsym $mod+Shift+b exec gnome-terminal -x bash -c "ikhal"
 # Fire up a dark terminal
 bindsym $mod+Shift+Return exec gnome-terminal --tab-with-profile=dark 
 
-# Start firefox
-bindsym $mod+Shift+m exec firefox
+# Start qutebrowser 
+bindsym $mod+Shift+m exec qutebrowser 
 
 # Start xreader
 bindsym $mod+Shift+n exec xreader
