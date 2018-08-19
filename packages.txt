@@ -1,0 +1,1 @@
+vim i3 i3status i3lock feh arandr qutebrowser zathura texlive-full pandoc kmplot corebird ranger ikhal hexchat xreader firefox
