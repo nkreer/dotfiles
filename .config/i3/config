@@ -162,7 +162,7 @@ bindsym $mod+r mode "resize"
 exec_always xrandr --output LVDS-1 --mode 1360x768 --primary
 
 # shortcut desktop setup
-bindsym $mod+Shift+w exec xrandr --output VGA-1 --primary --mode 1440x900 && xrandr --output LVDS-1 --off
+bindsym $mod+Shift+w exec xrandr --output VGA-1 --primary --mode 1440x900 && xrandr --output LVDS-1 --off 
 
 # Lock the display
 bindsym $mod+i exec i3lock-fancy -dg
@@ -196,8 +196,11 @@ bindsym $mod+Shift+Return exec gnome-terminal --tab-with-profile=dark
 # Start qutebrowser 
 bindsym $mod+Shift+m exec qutebrowser 
 
-# Start xreader
-bindsym $mod+Shift+n exec xreader
+# Start newsboat
+bindsym $mod+Shift+n exec gnome-terminal --tab-with-profile=dark -x bash -c "newsboat"
+
+# Watch a quick Tagesschau
+bindsym $mod+Shift+t exec mpv https://www.tagesschau.de/100sekunden/
 
 # Colors / Theming - "archlinux" by i3-styles 
 
@@ -213,7 +216,7 @@ client.background       #FFFFFF
 bar {
   status_command i3status
   font "pango:DejaVu Sans Mono 14"
-  position bottom
+  position top
   colors {
     background #222222
     statusline #dddddd
