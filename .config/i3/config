@@ -161,10 +161,12 @@ bindsym $mod+r mode "resize"
 # User specific
 
 # Display 
-exec_always xrandr --output LVDS-1 --mode 1360x768 --primary
+exec_always xrandr --output VGA-1 --off --output LVDS-1 --mode 1360x768 --primary
 
 # shortcut desktop setup
 bindsym $mod+Shift+w exec xrandr --output VGA-1 --primary --mode 1440x900 && xrandr --output LVDS-1 --off 
+
+# exec_always xsetroot -solid "#007CFF"
 
 # Lock the display
 bindsym $mod+i exec i3lock-fancy -dg
@@ -230,6 +232,9 @@ bar {
     urgent_workspace #2f343a #900000 #ffffff #ffffff
   }
 }
+
+# screenzoom.sh
+bindsym $mod+x exec sh ~/Scripts/screenzoom.sh
 
 # Start the networkmanager applet for convenience
 exec --no-startup-id nm-applet
