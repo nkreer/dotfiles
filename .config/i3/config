@@ -238,3 +238,7 @@ bindsym $mod+x exec sh ~/Scripts/screenzoom.sh
 
 # Start the networkmanager applet for convenience
 exec --no-startup-id nm-applet
+
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+asterisk scratchpad show
